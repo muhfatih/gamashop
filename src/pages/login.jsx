@@ -1,7 +1,7 @@
 import React from "react";
 
-function login() {
-  return <div></div>;
+const Login = () => {
+  return <div>ini login</div>;
 }
 
-export default login;
+export default Login;
