@@ -4,8 +4,8 @@ import GuestOnlyRoute from "src/core/routeblocks/GuestOnlyRoute";
 const Login = () => {
 	return (
 		<GuestOnlyRoute redirect="/dashboard">
-			<div className="w-full bg-black">
-				<div className="w-full text-primary-red">askdj</div>
+			<div className="w-full bg-red-900">
+				<div className="">askdj</div>
 				<div>alskdj</div>
 			</div>
 		</GuestOnlyRoute>
