@@ -5,7 +5,7 @@ const LayoutStore = () => {
 
 	const authMethods = {
 		authenticate: () => {
-			
+
 		},
 		login: (username, password) => {
 			//success 
@@ -26,7 +26,7 @@ const LayoutStore = () => {
 
 	useEffect(() => {
 		//masuk
-		setStatus('user')
+		setStatus('guest')
 	}, []);
 
 	return {
