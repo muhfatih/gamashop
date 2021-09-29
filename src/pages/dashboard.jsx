@@ -1,10 +1,11 @@
 import React from 'react'
+import UserOnlyRoute from '../core/routeblocks/UserOnlyRoute'
 
 const Dashboard = () => {
 	return (
-		<div>
+		<UserOnlyRoute redirect="/login">
 			ini dashboard
-		</div>
+		</UserOnlyRoute>
 	)
 }
 

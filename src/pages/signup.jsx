@@ -1,7 +1,12 @@
 import React from "react";
+import GuestOnlyRoute from './../core/routeblocks/GuestOnlyRoute';
 
 const SignUp = () => {
-  return <div>ini SignUp</div>;
+  return  (
+	<GuestOnlyRoute redirect="/dashboard">
+		ini login
+	</GuestOnlyRoute>
+  );
 }
 
 export default SignUp;
