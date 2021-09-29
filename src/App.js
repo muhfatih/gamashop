@@ -7,8 +7,8 @@ import SignUp from './pages/signup';
 import Dashboard from './pages/dashboard';
 
 const App = () => {
-  return (
-	  <ContextProvider>
+	return (
+		<ContextProvider>
 			<Router>
 				<Switch>
 					<Route exact path="/" component={Home} />
@@ -17,8 +17,8 @@ const App = () => {
 					<Route exact path="/dashboard" component={Dashboard} />
 				</Switch>
 			</Router>
-	  </ContextProvider>
-  );
+		</ContextProvider>
+	);
 }
 
 export default App;
