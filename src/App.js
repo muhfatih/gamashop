@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import ContextProvider from './core/contexts';
+
 import Home from './pages';
 import Login from './pages/login';
 import SignUp from './pages/signup';
 import Dashboard from './pages/dashboard';
-import ContextProvider from './core/contexts';
 
 const App = () => {
   return (
