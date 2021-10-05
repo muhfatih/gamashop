@@ -9,6 +9,8 @@ export default gamaxios;
 
 //API DOCUMENTATION
 
+//PRODUCTS
+
 export const GET_LIST_TRENDING_PRODUCT = () => {
 
 	const params = {
@@ -274,11 +276,44 @@ export const GET_LIST_BY_CATEGORY_PRODUCT = () => {
 	return send({status: 'OK', body: response})
 }
 
+export const GET_SINGLE_PRODUCT = () => {
+
+	const params = {
+		product_id: '3784yghh37823uh9',
+	}
+	
+	const response = {
+		_id: '3784yghh37823uh9',
+		fk_seller: '2830jb32438b37',
+		category: 'attribute',
+		name: 'Pom-pom PPSMB DIJAMIN LULUS Pengecekan 100%',
+		images: [
+			'https://postimg.cc/ns8D9srV', 
+			'https://postimg.cc/RNDf9pzH', 
+			'https://postimg.cc/zyHhfwJP', 
+			'https://postimg.cc/gwv6VYLV',
+		],
+		price: 1850000,
+		amount_stock: 120,
+		description: 'ZCUT-9 adalah pemotong lakban otomatis paling canggih di kelasnya. Z-CUT9 di lengkapi dengan 2 sensor yg membuatnya bisa melakukan pemotongan 2 lakban sekaligus. Mesin ini juga mempunya fitur keselamatan yang mencegah aktivasi mesin pada saat ada benda asing di dalam mesin (misalnya jari tangan, benda atau alat asing) Panjang potongan: 5mm - 999mm (hampir 1 meter) Fitur Otomatis Pencegah Cidera Memory Penyimpanan yang bisa menyimpan sampai 6 macam ukuran. Bisa memotong banyak macam lakban, kertas, aluminium foil dll. 2 sensor sehingga bisa memotong 2 lakban sekaligus Ruang Penyimpanan Pinset (Bonus Pinset) Dimension: 116(W)*140(D)*213(H)mm / Power Consumption: 40W / Voltage: AC220V/50Hz or AC110V/60Hz / Net Weight: 2.8 KGS',
+		amount_sold: 14,
+		created_at: new Date(1633281954053),
+		updated_at: new Date(1633281954053),
+	}
+
+	gamaxios.get('/product/list-by-category', { params })
+	.then(api => console.log('api-ready', api))
+	.catch(() => {})
+	
+	return send({status: 'OK', body: response})
+}
+
+
 //AUTH APIs
 
 export const POST_REGISTER_CUSTOMER = () => {
 
-	const params = {
+	const post = {
 		email: 'bintangbagus01@mail.ugm.ac.id',
 		name: 'R. Bintang Bagus',
 		password: 'fghdfgd',
@@ -289,22 +324,22 @@ export const POST_REGISTER_CUSTOMER = () => {
 		refreshToken: 'jsdnckjncdd',
 		user_data: {
 			_id: 'scbakscbnasnx',
+			role: 'customer',
 			name: 'R. Bintang Bagus',
 			email: 'bintangbagus01@mail.ugm.ac.id',
 		}
 	}
 
-	gamaxios.get('/auth/login-customer', { params })
+	gamaxios.post('/auth/login-customer', post)
 	.then(api => console.log('api-ready', api))
 	.catch(() => {})
 	
 	return send({status: 'OK', body: response})
 }
 
-
 export const POST_LOGIN_CUSTOMER = () => {
 
-	const params = {
+	const post = {
 		email: 'bintangbagus01@mail.ugm.ac.id',
 		password: 'fghdfgd',
 	}
@@ -314,12 +349,91 @@ export const POST_LOGIN_CUSTOMER = () => {
 		refreshToken: 'jsdnckjncdd',
 		user_data: {
 			_id: 'scbakscbnasnx',
+			role: 'customer',
 			name: 'R. Bintang Bagus',
 			email: 'bintangbagus01@mail.ugm.ac.id',
 		}
 	}
 
-	gamaxios.get('/auth/register-customer', { params })
+	gamaxios.post('/auth/login-customer', post)
+	.then(api => console.log('api-ready', api))
+	.catch(() => {})
+	
+	return send({status: 'OK', body: response})
+}
+
+export const POST_CONTINUE_SESSION = () => {
+
+	const post = {
+		refreshToken: 'jsdnckjncdd'
+	}
+	
+	const response = {
+		token: 'ejgbnkjsdnfgbk',
+		refreshToken: 'jsdnckjncdd',
+		user_data: {
+			_id: 'scbakscbnasnx',
+			role: 'customer',
+			name: 'R. Bintang Bagus',
+			email: 'bintangbagus01@mail.ugm.ac.id',
+		}
+	}
+
+	gamaxios.post('/auth/continue-session', post)
+	.then(api => console.log('api-ready', api))
+	.catch(() => {})
+	
+	return send({status: 'OK', body: response})
+}
+
+export const POST_REGISTER_SELLER = () => {
+
+	const post = {
+		email: 'bintangbagus01@mail.ugm.ac.id',
+		name: 'R. Bintang Bagus',
+		address: 'sapen GK 1/350',
+		password: 'fghdfgd',
+	}
+	
+	const response = {
+		token: 'ejgbnkjsdnfgbk',
+		refreshToken: 'jsdnckjncdd',
+		user_data: {
+			_id: 'scbakscbnasnx',
+			role: 'seller',
+			name: 'R. Bintang Bagus',
+			address: 'sapen GK 1/350',
+			email: 'bintangbagus01@mail.ugm.ac.id',
+		}
+	}
+
+	gamaxios.post('/auth/register-seller', post)
+	.then(api => console.log('api-ready', api))
+	.catch(() => {})
+	
+	return send({status: 'OK', body: response})
+}
+
+export const POST_LOGIN_SELLER = () => {
+
+	const post = {
+		email: 'bintangbagus01@mail.ugm.ac.id',
+		password: 'fghdfgd',
+	}
+	
+	const response = {
+		token: 'ejgbnkjsdnfgbk',
+		refreshToken: 'jsdnckjncdd',
+		user_data: {
+			_id: 'scbakscbnasnx',
+			role: 'seller',
+			name: 'R. Bintang Bagus',
+			address: 'sapen GK 1/350',
+			email: 'bintangbagus01@mail.ugm.ac.id',
+		}
+	}
+
+	gamaxios.post('/auth/login-seller', post)
 	.then(api => console.log('api-ready', api))
 	.catch(() => {})
 	
