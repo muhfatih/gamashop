@@ -1,11 +1,14 @@
 import React from 'react'
 import TrendingProducts from '../components/home/TrendingProducts'
+import MainLayout from './../components/_layouts/MainLayout';
 
 const index = () => {
 	return (
-		<div className="bg-blue-400 text-red-400 p-10">
-			<TrendingProducts />
-		</div>
+		<MainLayout className="">
+			<div className="container">
+				<TrendingProducts />
+			</div>
+		</MainLayout>
 	)
 }
 
