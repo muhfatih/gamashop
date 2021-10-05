@@ -439,3 +439,7 @@ export const POST_LOGIN_SELLER = () => {
 	
 	return send({status: 'OK', body: response})
 }
+
+//POST_UPDATE_PRODUCT
+//DELETE_PRODUCT
+//GET_LIST_PRODUCT_BY_SELLER
