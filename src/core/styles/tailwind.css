@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+	.gradient-main {
+		background: linear-gradient(124.59deg, #03e669 -5.71%, #00c5f2 104.4%);
+	}
+
 	/* Built in loading state of every button */
 	button[data-loading='true'] {
 		@apply flex-cc;
@@ -115,7 +119,7 @@
 
 	html,
 	body {
-		@apply font-main m-0 p-0 bg-base ;
+		@apply font-main m-0 p-0 bg-base;
 		scroll-behavior: smooth;
 	}
 
