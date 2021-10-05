@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { GET_TRENDING_PRODUCT_LIST } from '../../api.documentation';
+import { GET_LIST_TRENDING_PRODUCT } from '../../api.documentation';
 
 const TrendingProducts = () => {
 	const [productList, setProductList] = useState([])
 
 	useEffect(() => {
 		(async () => {
-			const data = await GET_TRENDING_PRODUCT_LIST().then(res => res.data)
+			const data = await GET_LIST_TRENDING_PRODUCT().then(res => res.data)
 			setProductList(data)
 		})();
 	}, []);
@@ -14,7 +14,7 @@ const TrendingProducts = () => {
 	console.log(productList);
 
 	return (
-		<div className="">wea</div>
+		<div className=""></div>
 	)
 }
 
