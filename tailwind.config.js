@@ -8,6 +8,7 @@ module.exports = {
 				DEFAULT: '5%',
 				sm: '32px',
 			},
+			center: true
 		},
 		extend: {
 			colors: {
@@ -18,7 +19,8 @@ module.exports = {
 				}
 			},
 			fontFamily: {
-				main: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+				main: 'Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
+				slab: 'Patua One, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif',
 			},
 			screens: {
 				'-2xl': { raw: '(max-width: 1535px)' },
