@@ -10,7 +10,6 @@ export default gamaxios;
 //API DOCUMENTATION
 
 //PRODUCTS
-
 export const GET_LIST_TRENDING_PRODUCT = () => {
 
 	const params = {
@@ -24,7 +23,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			category: 'attribute',
 			name: 'Pom-pom PPSMB DIJAMIN LULUS Pengecekan 100%',
 			images: [
-				'https://postimg.cc/ns8D9srV', 
+				'https://i.postimg.cc/PqJzcYkD/Frame-28-2.png', 
 				'https://postimg.cc/RNDf9pzH', 
 				'https://postimg.cc/zyHhfwJP', 
 				'https://postimg.cc/gwv6VYLV',
@@ -35,6 +34,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			amount_sold: 14,
 			created_at: new Date(1633281954053),
 			updated_at: new Date(1633281954053),
+			rating: 2.3
 		},
 		{
 			_id: 'fdss44f7823uh9',
@@ -42,7 +42,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			category: 'attribute',
 			name: 'Caping Reguler Fit ALL SIZE Promo PPSMB',
 			images: [
-				'https://postimg.cc/RNDf9pzH', 
+				'https://i.postimg.cc/PqJzcYkD/Frame-28-2.png', 
 				'https://postimg.cc/ns8D9srV', 
 				'https://postimg.cc/zyHhfwJP', 
 				'https://postimg.cc/gwv6VYLV',
@@ -53,6 +53,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			amount_sold: 10,
 			created_at: new Date(1633281954053),
 			updated_at: new Date(1633281954053),
+			rating: 4.3
 		},
 		{
 			_id: '3485n3f4798dn934',
@@ -60,7 +61,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			category: 'attribute',
 			name: 'Sepatu kerakyatan CT Size 36 BNIB',
 			images: [
-				'https://postimg.cc/zyHhfwJP', 
+				'https://i.postimg.cc/PqJzcYkD/Frame-28-2.png', 
 				'https://postimg.cc/RNDf9pzH', 
 				'https://postimg.cc/ns8D9srV', 
 				'https://postimg.cc/gwv6VYLV',
@@ -71,6 +72,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			amount_sold: 8,
 			created_at: new Date(1633281954053),
 			updated_at: new Date(1633281954053),
+			rating: 1.5
 		},
 		{
 			_id: 'mmm934293783ess9',
@@ -78,7 +80,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			category: 'book',
 			name: 'Buku Inspiratif [ORI] Catatan Akhir Kuliah',
 			images: [
-				'https://postimg.cc/gwv6VYLV',
+				'https://i.postimg.cc/PqJzcYkD/Frame-28-2.png',
 				'https://postimg.cc/RNDf9pzH', 
 				'https://postimg.cc/ns8D9srV', 
 				'https://postimg.cc/zyHhfwJP', 
@@ -89,6 +91,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			amount_sold: 2,
 			created_at: new Date(1633281954053),
 			updated_at: new Date(1633281954053),
+			rating: 3.8
 		}
 	]
 
