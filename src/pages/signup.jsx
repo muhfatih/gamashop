@@ -4,7 +4,7 @@ import GuestOnlyRoute from './../core/routeblocks/GuestOnlyRoute';
 const SignUp = () => {
   return  (
 	<GuestOnlyRoute redirect="/dashboard">
-		ini login
+		ini signup
 	</GuestOnlyRoute>
   );
 }
