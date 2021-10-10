@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GET_LIST_TRENDING_PRODUCT } from "../../api.documentation";
+import { GET_LIST_NEW_ARRIVAL_PRODUCT } from "../../api.documentation";
 import { BsArrowRight } from "react-icons/bs";
 import Love from "./../../images/LoveIcon.svg";
 import Star from "./../../images/StarIcon.svg";
@@ -9,7 +9,7 @@ const TrendingProducts = () => {
 
   useEffect(() => {
     (async () => {
-      const data = await GET_LIST_TRENDING_PRODUCT().then(
+      const data = await GET_LIST_NEW_ARRIVAL_PRODUCT().then(
         (res) => res.data.body
       );
       setProductList(data);
@@ -23,7 +23,7 @@ const TrendingProducts = () => {
     <div className="my-14">
       {/* Category Title */}
       <div className="flex content-center justify-between align-middle">
-        <p className="text-2xl font-semibold">TRENDING</p>
+        <p className="text-2xl font-semibold">New Arrival</p>
         <h6 className="">
           See More <BsArrowRight className="inline" />
         </h6>

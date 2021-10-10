@@ -23,7 +23,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			category: 'attribute',
 			name: 'Pom-pom PPSMB DIJAMIN LULUS Pengecekan 100%',
 			images: [
-				'https://i.postimg.cc/PqJzcYkD/Frame-28-2.png', 
+				'https://i.postimg.cc/5trqMyxR/Frame-8-2.png', 
 				'https://postimg.cc/RNDf9pzH', 
 				'https://postimg.cc/zyHhfwJP', 
 				'https://postimg.cc/gwv6VYLV',
@@ -42,7 +42,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			category: 'attribute',
 			name: 'Caping Reguler Fit ALL SIZE Promo PPSMB',
 			images: [
-				'https://i.postimg.cc/PqJzcYkD/Frame-28-2.png', 
+				'https://i.postimg.cc/W1XwXSxj/Frame-7-5.png', 
 				'https://postimg.cc/ns8D9srV', 
 				'https://postimg.cc/zyHhfwJP', 
 				'https://postimg.cc/gwv6VYLV',
@@ -61,7 +61,7 @@ export const GET_LIST_TRENDING_PRODUCT = () => {
 			category: 'attribute',
 			name: 'Sepatu kerakyatan CT Size 36 BNIB',
 			images: [
-				'https://i.postimg.cc/PqJzcYkD/Frame-28-2.png', 
+				'https://i.postimg.cc/fRwvc12B/Frame-6-4.png', 
 				'https://postimg.cc/RNDf9pzH', 
 				'https://postimg.cc/ns8D9srV', 
 				'https://postimg.cc/gwv6VYLV',
@@ -115,7 +115,7 @@ export const GET_LIST_NEW_ARRIVAL_PRODUCT = () => {
 			category: 'attribute',
 			name: 'Pom-pom PPSMB DIJAMIN LULUS Pengecekan 100%',
 			images: [
-				'https://postimg.cc/ns8D9srV', 
+				'https://i.postimg.cc/5trqMyxR/Frame-8-2.png', 
 				'https://postimg.cc/RNDf9pzH', 
 				'https://postimg.cc/zyHhfwJP', 
 				'https://postimg.cc/gwv6VYLV',
@@ -133,7 +133,7 @@ export const GET_LIST_NEW_ARRIVAL_PRODUCT = () => {
 			category: 'attribute',
 			name: 'Caping Reguler Fit ALL SIZE Promo PPSMB',
 			images: [
-				'https://postimg.cc/RNDf9pzH', 
+				'https://i.postimg.cc/W1XwXSxj/Frame-7-5.png', 
 				'https://postimg.cc/ns8D9srV', 
 				'https://postimg.cc/zyHhfwJP', 
 				'https://postimg.cc/gwv6VYLV',
@@ -151,7 +151,7 @@ export const GET_LIST_NEW_ARRIVAL_PRODUCT = () => {
 			category: 'attribute',
 			name: 'Sepatu kerakyatan CT Size 36 BNIB',
 			images: [
-				'https://postimg.cc/zyHhfwJP', 
+				'https://i.postimg.cc/fRwvc12B/Frame-6-4.png', 
 				'https://postimg.cc/RNDf9pzH', 
 				'https://postimg.cc/ns8D9srV', 
 				'https://postimg.cc/gwv6VYLV',
@@ -169,7 +169,7 @@ export const GET_LIST_NEW_ARRIVAL_PRODUCT = () => {
 			category: 'book',
 			name: 'Buku Inspiratif [ORI] Catatan Akhir Kuliah',
 			images: [
-				'https://postimg.cc/gwv6VYLV',
+				'https://i.postimg.cc/PqJzcYkD/Frame-28-2.png',
 				'https://postimg.cc/RNDf9pzH', 
 				'https://postimg.cc/ns8D9srV', 
 				'https://postimg.cc/zyHhfwJP', 
