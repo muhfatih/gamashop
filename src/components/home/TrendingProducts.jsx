@@ -17,7 +17,7 @@ const TrendingProducts = () => {
     })();
   }, []);
 
-  console.log(productList);
+  // console.log(productList);
 
   return (
     <div className="my-14">

@@ -1,6 +1,7 @@
 import React from "react";
 import TrendingProducts from "../components/home/TrendingProducts";
 import NewArrivalProducts from "../components/home/NewArrivalProducts";
+import ExploreCategories from "../components/home/ExploreCategories";
 import MainLayout from "./../components/_layouts/MainLayout";
 
 import FreeShipping from "./../images/FreeShipping.png";
@@ -36,6 +37,7 @@ const index = () => {
 
         <TrendingProducts />
         <NewArrivalProducts />
+        <ExploreCategories />
       </div>
     </MainLayout>
   );

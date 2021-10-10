@@ -4,7 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 import Love from "./../../images/LoveIcon.svg";
 import Star from "./../../images/StarIcon.svg";
 
-const TrendingProducts = () => {
+const NewArrivalProducts = () => {
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const TrendingProducts = () => {
     })();
   }, []);
 
-  console.log(productList);
+  // console.log(productList);
 
   return (
     <div className="my-14">
@@ -83,4 +83,4 @@ const TrendingProducts = () => {
   );
 };
 
-export default TrendingProducts;
+export default NewArrivalProducts;
