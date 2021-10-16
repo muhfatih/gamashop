@@ -26,6 +26,10 @@
 		animation: spin 1.2s linear infinite;
 	}
 
+	.hoverMenu:hover {
+		@apply bg-black text-white px-4 py-1 rounded-md;
+	}
+
 	@keyframes spin {
 		0% {
 			transform: rotate(0deg);
