@@ -1,6 +1,6 @@
 import React from "react";
 import GuestOnlyRoute from "src/core/routeblocks/GuestOnlyRoute";
-import Splash from "./../images/Splash.png";
+import Splash2 from "src/images/Splash2.png";
 import { Link } from 'react-router-dom'
 
 const Login = () => {
@@ -32,7 +32,7 @@ const Login = () => {
 								Forgot password?
 								</button>
 							</div>
-						<Link to="/signup" className="full"> 
+						<Link to="/seller/signup" className="full"> 
 						<button type="button" className="w-full mt-6 h-10 transition ease-in-out duration-700 hover:-translate-y-1 hover:shadow-xl text-white font-bold tracking-wide bg-gradient-to-r from-gray-600 to-black rounded-lg">
 								<p>Register</p>
 						    </button>	
@@ -40,8 +40,8 @@ const Login = () => {
 							
 						 <Link to="/dashboard" className="w-full h-full mt-6">Back</Link>	
 					</div>
-					<Link to="/seller/login" className="relative w-464px h-532px ml-20 flex flex-col rounded-lg">
-						<img src={Splash} alt="Splash" className="w-full h-90px relative ml-38px mt-38px transition ease-in-out duration-700 hover:-translate-y-1 hover:shadow-xl"></img>
+					<Link to="/login" className="relative w-464px h-532px ml-20 flex flex-col rounded-lg">
+						<img src={Splash2} alt="Splash2" className="w-full h-90px relative ml-38px mt-38px transition ease-in-out duration-700 hover:-translate-y-1 hover:shadow-xl"></img>
 				</Link>
 			</div>
 		</GuestOnlyRoute>

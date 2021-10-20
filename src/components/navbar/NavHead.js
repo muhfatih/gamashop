@@ -17,7 +17,7 @@ const SearchBar = () => {
 	return (
 		<div className="h-10 flex-cc">
 			<input type="text" className="bg-white h-full w-96 border border-gray-400 px-4 border-r-0" placeholder="Search..." />
-			<button className="gradient-main h-full w-16 flex-cc"><FaSearch className="text-white text-xl"/></button>
+			<button className="gradient-main h-full w-16 flex-cc"><FaSearch className="text-white text-xl" /></button>
 		</div>
 	)
 }
@@ -38,13 +38,13 @@ const ButtonGroup = () => {
 
 const AuthArea = () => {
 	return (
-		<div className="flex-cc">
+		<Link to="/dashboard" className="flex-cc">
 			<div className="h-10 w-10 rounded-full flex-cc overflow-hidden">
 				{/* if ada image show image user */}
-				<FaUserCircle className="full text-gray-400" /> 
+				<FaUserCircle className="full text-gray-400" />
 			</div>
 			<p className="font-semibold ml-3">Hi, Rizky</p>
-		</div>
+		</Link>
 	)
 }
 
