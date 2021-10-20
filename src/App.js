@@ -6,6 +6,7 @@ import Login from './pages/login';
 import SignUp from './pages/signup';
 import Dashboard from './pages/dashboard';
 import Profile from './pages/profile';
+import ProductDetail from "./pages/product_detail";
 
 const App = () => {
 	return (
@@ -17,6 +18,7 @@ const App = () => {
 					<Route exact path="/signup" component={SignUp} />
 					<Route exact path="/dashboard" component={Dashboard} />
 					<Route exact path="/profile" component={Profile} />
+					<Route exact path="/product/:id" component={ProductDetail}/>
 				</Switch>
 			</Router>
 		</ContextProvider>
