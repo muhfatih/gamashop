@@ -10,10 +10,10 @@ function CateygoriedItem({ category }) {
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
-    console.log(category);
+    // console.log(category);
 
     if (category === "book") {
-      console.log("benar woyy");
+      // console.log("benar woyy");
       (async () => {
         const data = await GET_LIST_BY_CATEGORY_PRODUCT("book").then(
           (res) => res.data.body
@@ -21,7 +21,7 @@ function CateygoriedItem({ category }) {
         setProductList(data);
       })();
     } else if (category === "attribute") {
-      console.log("benar woyy");
+      // console.log("benar woyy");
       (async () => {
         const data = await GET_LIST_BY_CATEGORY_PRODUCT("book").then(
           (res) => res.data.body
@@ -29,7 +29,7 @@ function CateygoriedItem({ category }) {
         setProductList(data);
       })();
     } else if (category === "household") {
-      console.log("benar woyy");
+      // console.log("benar woyy");
       (async () => {
         const data = await GET_LIST_BY_CATEGORY_PRODUCT("book").then(
           (res) => res.data.body
@@ -40,8 +40,8 @@ function CateygoriedItem({ category }) {
   }, []);
 
   useEffect(() => {
-    console.log("dalam use effect");
-    console.log(productList);
+    // console.log("dalam use effect");
+    // console.log(productList);
   }, [productList]);
 
   let imgUrl;
