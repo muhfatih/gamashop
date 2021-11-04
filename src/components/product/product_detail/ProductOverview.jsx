@@ -4,11 +4,25 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 const ProductOverview = (props) => {
   const [count, setCount] = useState(0);
 
-  const tambah = () => {
+  const increment = () => {
     setCount((count) => count + 1);
   };
 
-  onclick={tambah}
+  const decrement = () => {
+    setCount((count) => {
+      const currentCount = count - 1;
+      if (currentCount < 0) {
+        return 0;
+      } else {
+        return count - 1;
+      }
+    });
+  };
+
+  const currencyFormatter = Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  });
 
   return (
     <div>
@@ -22,23 +36,23 @@ const ProductOverview = (props) => {
             "-webkit-text-fill-color": "transparent",
           }}
         >
-          {props.price}
+          {currencyFormatter.format(props.price)}
         </h2>
       </div>
 
       <div className="flex">
-        <button className="p-4 bg-transparent border-2 border-gray-400 rounded-xl">
-          <FaMinus size={42} className="text-xl text-gray-400 " />
+        <button
+          onClick={decrement}
+          className="p-4 bg-transparent border-2 border-gray-400 rounded-xl"
+        >
+          <FaMinus size={42} className="text-xl text-gray-400" />
         </button>
-        <h2 className="mt-5 text-xl text-4xl font-semibold text-black mx-7">
-          {count}
-        </h2>
-        <button className="p-4 mr-8 bg-transparent border-2 border-gray-400 rounded-xl">
-          <FaPlus
-            size={42}
-            className="text-xl text-gray-400 "
-            onClick={tambah}
-          />
+        <h2 className="mt-5 text-4xl font-semibold text-black mx-7">{count}</h2>
+        <button
+          onClick={increment}
+          className="p-4 mr-8 bg-transparent border-2 border-gray-400 rounded-xl"
+        >
+          <FaPlus size={42} className="text-xl text-gray-400 " />
         </button>
         <button
           className="py-4 text-4xl font-bold text-white rounded-xl px-14"

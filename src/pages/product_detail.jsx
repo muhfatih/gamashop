@@ -12,10 +12,9 @@ const ProductDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    console.log(`product id = ${id}`);
     (async () => {
-      const data = await GET_SINGLE_PRODUCT().then((res) => {
-        console.log("berhasil");
-        console.log(res.data.body);
+      const data = await GET_SINGLE_PRODUCT({product_id: id}).then((res) => {
         return res.data.body;
       });
       setProductDetail(data);
@@ -29,7 +28,7 @@ const ProductDetail = () => {
           <>
             <div className="flex">
               <ProductImages images={productDetail.images} />
-              <spacer className="mr-10" />
+              <spacer className="mr-16" />
               <ProductOverview
                 name={productDetail.name}
                 price={productDetail.price}

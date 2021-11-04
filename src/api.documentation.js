@@ -279,22 +279,20 @@ export const GET_LIST_BY_CATEGORY_PRODUCT = () => {
 	return send({status: 'OK', body: response})
 }
 
-export const GET_SINGLE_PRODUCT = () => {
-
+export const GET_SINGLE_PRODUCT = ({product_id}) => {
 	const params = {
 		product_id: '3784yghh37823uh9',
 	}
-	
 	const response = {
 		_id: '3784yghh37823uh9',
 		fk_seller: '2830jb32438b37',
 		category: 'attribute',
 		name: 'Pom-pom PPSMB DIJAMIN LULUS Pengecekan 100%',
 		images: [
-			'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1614401830/jutfcxyonrvnoig0arse.png', 
-			'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1614401830/jutfcxyonrvnoig0arse.png', 
-			'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1614401830/jutfcxyonrvnoig0arse.png', 
-			'https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1614401830/jutfcxyonrvnoig0arse.png',
+			'https://i.postimg.cc/5trqMyxR/Frame-8-2.png', 
+			'https://i.postimg.cc/5trqMyxR/Frame-8-2.png', 
+			'https://i.postimg.cc/5trqMyxR/Frame-8-2.png', 
+			'https://i.postimg.cc/5trqMyxR/Frame-8-2.png',
 		],
 		price: 1850000,
 		amount_stock: 120,
@@ -304,11 +302,11 @@ export const GET_SINGLE_PRODUCT = () => {
 		updated_at: new Date(1633281954053),
 	}
 
-	gamaxios.get('/product/list-by-category', { params })
-	.then(api => console.log('api-ready', api))
+	return gamaxios.get('/product/list-by-category', { 
+		product_id })
+	.then(api => {
+		return api;})
 	.catch(() => {})
-	
-	return send({status: 'OK', body: response})
 }
 
 
