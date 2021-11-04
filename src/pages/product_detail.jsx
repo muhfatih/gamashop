@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { GET_SINGLE_PRODUCT } from "src/api.documentation";
 import ProductDescription from "src/components/product/product_detail/ProductDescription";
 import ProductImages from "src/components/product/product_detail/ProductImages";
 import ProductOverview from "src/components/product/product_detail/ProductOverview";
 import MainLayout from "src/components/_layouts/MainLayout";
+import axios from "axios";
 
 const ProductDetail = () => {
   const [productDetail, setProductDetail] = useState();
 
-  const { id } = useParams();
+  const  {id} =useParams();
 
   useEffect(() => {
-    console.log(`product id = ${id}`);
     (async () => {
-      const data = await GET_SINGLE_PRODUCT({product_id: id}).then((res) => {
-        return res.data.body;
+
+      const data = await axios
+      .get(`https://gamaxios.herokuapp.com/product/${id}`)
+      .then(function (response) {
+        setProductDetail(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .then(function () {
+        console.log("im here");
       });
-      setProductDetail(data);
     })();
   }, []);
 
@@ -30,6 +37,7 @@ const ProductDetail = () => {
               <ProductImages images={productDetail.images} />
               <spacer className="mr-16" />
               <ProductOverview
+                productDetail = {productDetail}
                 name={productDetail.name}
                 price={productDetail.price}
                 amount_stock={productDetail.amount_stock}

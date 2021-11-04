@@ -302,11 +302,12 @@ export const GET_SINGLE_PRODUCT = ({product_id}) => {
 		updated_at: new Date(1633281954053),
 	}
 
-	return gamaxios.get('/product/list-by-category', { 
+	return gamaxios.get('/product/', { 
 		product_id })
 	.then(api => {
 		return api;})
 	.catch(() => {})
+	// return send({body:response,message:"Success"});
 }
 
 
