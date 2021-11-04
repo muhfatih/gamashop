@@ -4,6 +4,7 @@ import { BsArrowRight } from "react-icons/bs";
 import Love from "./../../images/LoveIcon.svg";
 import Star from "./../../images/StarIcon.svg";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const TrendingProducts = () => {
   const [productList, setProductList] = useState([]);
@@ -55,13 +56,14 @@ const TrendingProducts = () => {
       <div className="grid grid-cols-4 gap-x-5">
         {/* grid */}
         {productList.map((item, index) => (
-          <div
+          <Link
             key={index}
             className="rounded-lg "
             style={{
               height: "340px",
               boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
             }}
+            to={`/product/${item._id}`}
           >
             <img src={item.images[0]} alt="barang" className="mx-auto w-52" />
 
@@ -98,7 +100,7 @@ const TrendingProducts = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
