@@ -2,7 +2,7 @@ import axios from 'axios'
 const send = (data) => new Promise((resolve) => setTimeout(() => resolve({data: data}), 2000))
 
 const gamaxios = axios.create({
-	baseURL: 'https://api.gamashop.herokuapp.com/'
+	baseURL: 'https://gamaxios.herokuapp.com/'
 });
 
 export default gamaxios;

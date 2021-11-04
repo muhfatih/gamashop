@@ -10,27 +10,36 @@ const TrendingProducts = () => {
 
   useEffect(() => {
     (async () => {
-      const data = await GET_LIST_TRENDING_PRODUCT().then(
-        (res) => res.data.body
-      );
+      // const data = await GET_LIST_TRENDING_PRODUCT().then(
+      //   (res) => res.data.body
+      // );
 
-      // const data = await axios
-      //   .get("https://pokeapi.co/api/v2/pokemon/1")
-      //   .then((res) => {
-      //     console.log("berhasil");
-      //     console.log(res.data);
-      //     return res.data;
-      //   })
-      //   .catch((res) => {
-      //     console.log("gagal");
-      //     console.log(res);
-      //   });
-      setProductList(data);
-      console.log(data);
+      const data = await axios
+        .get("https://gamaxios.herokuapp.com/product/list-trending/")
+        .then(function (response) {
+          console.log("Sukses woyyy");
+          // console.log(response.data);
+
+          // let data = ;
+
+          setProductList(response.data.splice(0, 4));
+        })
+        .catch(function (error) {
+          console.log("gagal bang");
+          console.log(error);
+        })
+        .then(function () {
+          console.log("im here");
+        });
+
+      console.log("woyyy please");
+      // console.log(data);
     })();
   }, []);
 
-  console.log(productList);
+  useEffect(() => {
+    console.log(productList);
+  }, [productList]);
 
   return (
     <div className="my-14">

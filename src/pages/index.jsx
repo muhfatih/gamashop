@@ -36,8 +36,8 @@ const index = () => {
         </div>
 
         <TrendingProducts />
-        <NewArrivalProducts />
-        <ExploreCategories />
+        {/* <NewArrivalProducts /> */}
+        {/* <ExploreCategories /> */}
       </div>
     </MainLayout>
   );
