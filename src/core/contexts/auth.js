@@ -1,38 +1,48 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import gamaxios from "src/api.documentation";
 
-const LayoutStore = () => {
-	const [status, setStatus] = useState('initial') // initial | user | guest
+const AuthStore = () => {
+  const [userData, setUserData] = useState({});
+  const [status, setStatus] = useState("initial"); // initial | user | guest
 
-	const authMethods = {
-		authenticate: () => {
+  const authMethods = {
+    authenticate: () => {},
+    login: (username, password) => {
+      //success
+      setStatus("user");
+      // fail
+      setStatus("guest");
+    },
+    signup: ({ name, email, password }) => {
+      return gamaxios
+        .post("/register-customer", {
+          name,
+          email,
+          password,
+        })
+        .then((res) => {
+          setStatus("user");
+          setUserData(res.data.body.user_data);
+        })
+        .catch((err) => console.log(err.response.data.message));
+    },
+    logout: () => {
+      setStatus("guest");
+    },
+  };
 
-		},
-		login: (username, password) => {
-			//success 
-			setStatus('user')
-			// fail
-			setStatus('guest')
-		},
-		signup: (data) => {
-			//success 
-			setStatus('user')
-			// fail
-			setStatus('guest')
-		},
-		logout: () => {
-			setStatus('guest')
-		}
-	}
+  useEffect(() => {
+    //masuk
+    setStatus("guest");
+  }, []);
+  useEffect(() => {
+    console.log(userData);
+  }, [userData]);
 
-	useEffect(() => {
-		//masuk
-		setStatus('guest')
-	}, []);
-
-	return {
-		status,
-		authMethods
-	};
+  return {
+    status,
+    authMethods,
+  };
 };
 
-export default LayoutStore;
+export default AuthStore;

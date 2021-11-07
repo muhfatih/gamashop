@@ -26,9 +26,9 @@ const Cart = () => {
   });
 
   return (
-    <MainLayout className="mx-20 mt-5 flex-cs">
-      {/* brang */}
-      <div className="w-full p-6 bg-gray-100">
+    <MainLayout className="flex mx-20 mt-5">
+      {/* barang */}
+      <div className="p-6 bg-gray-200 w-full">
         <h1 className="text-xl font-bold">Cart</h1>
         {cartItems.map((element, i) => (
           <CartItem
@@ -44,10 +44,10 @@ const Cart = () => {
 
       {/* harga */}
       <div
-        className="justify-around p-4 ml-10 border rounded-xl"
-        style={{ width: 300 }}
+        className="justify-around p-4 ml-10 bg-red-300 "
+        style={{ width: 400 }}
       >
-        <div className="flex mb-10">
+        <div className="flex">
           <h3>Total harga</h3>
           <h3>{currencyFormatter.format(totalPrice)}</h3>
         </div>
