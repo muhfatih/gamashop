@@ -1,55 +1,67 @@
-import React,{useState} from 'react';
-import MainLayout from 'src/components/_layouts/MainLayout';
-import CartItem from 'src/components/cart/CartItem';
-import { useEffect } from 'react/cjs/react.development';
+import React, { useState } from "react";
+import MainLayout from "src/components/_layouts/MainLayout";
+import CartItem from "src/components/cart/CartItem";
+import { useEffect } from "react/cjs/react.development";
 
 const Cart = () => {
-    const [cartItems, setCartItems] = useState([])
- 
-    let totalPrice =0;
-    cartItems.forEach((item)=>{
-        totalPrice += item.price * item.amount;
-    })
+  const [cartItems, setCartItems] = useState([]);
 
-    const getCartFromLocalStorage = () => {
-        return JSON.parse(window.localStorage.getItem("cart"));
-    }
-    
-    useEffect(() => {
-        const items = getCartFromLocalStorage();
-        setCartItems(items);
-    },[])
+  let totalPrice = 0;
+  cartItems.forEach((item) => {
+    totalPrice += item.price * item.amount;
+  });
 
-    const currencyFormatter = Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR'});
+  const getCartFromLocalStorage = () => {
+    return JSON.parse(window.localStorage.getItem("cart"));
+  };
 
-    return (
-        <MainLayout className="flex mx-20 mt-5">
-            <div className="p-6 bg-gray-200">
-                <h1 className="text-xl font-bold">Cart</h1>
-                {cartItems.map((element,i)=>(
-                    <CartItem 
-                    key={i}
-                    image={element.images[0]}
-                    itemCount={element.amount}
-                    name={element.name}
-                    price={element.price}
-                    productDetail={element}/>
-                ))}
-                
-            </div>
-            <div className="justify-around p-4 ml-10 bg-red-300 " style={{width:300}}>
-                <div className="flex">
-                    <h3>Total harga</h3>
-                    <h3>{currencyFormatter.format(totalPrice)}</h3>
-                </div>        
-                    <button className="py-4 text-xl font-bold text-white rounded-xl px-14"
-                  style={{
-                    background:
-                      "linear-gradient(90.6deg, #04ED49 0%, #00C5F2 100%)",
-                  }}>Checkout</button>
-            </div>
-        </MainLayout>
-    )
-}
+  useEffect(() => {
+    const items = getCartFromLocalStorage();
+    setCartItems(items);
+  }, []);
+
+  const currencyFormatter = Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  });
+
+  return (
+    <MainLayout className="mx-20 mt-5 flex-cs">
+      {/* brang */}
+      <div className="w-full p-6 bg-gray-100">
+        <h1 className="text-xl font-bold">Cart</h1>
+        {cartItems.map((element, i) => (
+          <CartItem
+            key={i}
+            image={element.images[0]}
+            itemCount={element.amount}
+            name={element.name}
+            price={element.price}
+            productDetail={element}
+          />
+        ))}
+      </div>
+
+      {/* harga */}
+      <div
+        className="justify-around p-4 ml-10 border rounded-xl"
+        style={{ width: 300 }}
+      >
+        <div className="flex mb-10">
+          <h3>Total harga</h3>
+          <h3>{currencyFormatter.format(totalPrice)}</h3>
+        </div>
+        <button
+          className="py-4 text-xl font-bold text-white rounded-xl px-14"
+          style={{
+            background: "linear-gradient(90.6deg, #04ED49 0%, #00C5F2 100%)",
+          }}
+        >
+          Checkout
+        </button>
+      </div>
+    </MainLayout>
+  );
+};
 
 export default Cart;

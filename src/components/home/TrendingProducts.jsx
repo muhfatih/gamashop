@@ -19,9 +19,6 @@ const TrendingProducts = () => {
         .get("https://gamaxios.herokuapp.com/product/list-trending/")
         .then(function (response) {
           console.log("Sukses woyyy");
-          // console.log(response.data);
-
-          // let data = ;
 
           setProductList(response.data.splice(0, 4));
         })
