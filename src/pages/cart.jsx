@@ -111,6 +111,19 @@ const Cart = () => {
     setCartItems(newCart);
   };
 
+  const saveToCheckout = () => {
+    const toCheckout = [];
+
+    cartItems.forEach((item, idx) => {
+      if (item.isChecked === true) {
+        toCheckout.push(item);
+      }
+    });
+
+    window.localStorage.setItem("checkout", JSON.stringify(toCheckout));
+    window.location.href = "/checkout";
+  };
+
   return (
     <MainLayout className="flex mx-20 mt-5">
       {/* barang */}
@@ -134,22 +147,22 @@ const Cart = () => {
       </div>
 
       {/* harga */}
-      <div
-        className="justify-around p-4 ml-10 bg-red-300 "
-        style={{ width: 400 }}
-      >
-        <div className="flex">
-          <h3>Total harga</h3>
-          <h3>{currencyFormatter.format(prices)}</h3>
+      <div className="p-4 mx-auto ml-10 h-96" style={{ width: 440 }}>
+        <div className="flex flex-col h-40 p-4 border rounded-xl">
+          <div className="flex justify-between font-bold text-gray-900">
+            <h3>Total harga</h3>
+            <h3>{currencyFormatter.format(prices)}</h3>
+          </div>
+          <button
+            className="py-2 mt-4 text-xl font-bold text-white rounded-xl px-14"
+            style={{
+              background: "linear-gradient(90.6deg, #04ED49 0%, #00C5F2 100%)",
+            }}
+            onClick={() => saveToCheckout()}
+          >
+            Checkout
+          </button>
         </div>
-        <button
-          className="py-4 text-xl font-bold text-white rounded-xl px-14"
-          style={{
-            background: "linear-gradient(90.6deg, #04ED49 0%, #00C5F2 100%)",
-          }}
-        >
-          Checkout
-        </button>
       </div>
     </MainLayout>
   );
