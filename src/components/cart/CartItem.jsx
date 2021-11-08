@@ -12,22 +12,10 @@ const CartItem = ({
   isChecked,
   productDetail,
   toggleCheck,
+  increment,
+  decrement,
 }) => {
-  const [count, setCount] = useState(itemCount);
-  const increment = () => {
-    setCount((count) => count + 1);
-  };
-
-  const decrement = () => {
-    setCount((count) => {
-      const currentCount = count - 1;
-      if (currentCount < 0) {
-        return 0;
-      } else {
-        return count - 1;
-      }
-    });
-  };
+  //   const [count, setCount] = useState(itemCount);
 
   const deleteItem = () => {
     const items = window.localStorage;
@@ -75,14 +63,14 @@ const CartItem = ({
 
       <div className="flex self-end ">
         <button
-          onClick={decrement}
+          onClick={() => decrement(index)}
           className="p-2 ml-4 bg-transparent border-2 border-gray-400 rounded-xl"
         >
           <FaMinus size={14} className="text-xl text-gray-400" />
         </button>
-        <h4 className="self-center mx-4">{count}</h4>
+        <h4 className="self-center mx-4">{itemCount}</h4>
         <button
-          onClick={increment}
+          onClick={() => increment(index)}
           className="p-2 bg-transparent border-2 border-gray-400 rounded-xl"
         >
           <FaPlus size={14} className="text-xl text-gray-400 " />

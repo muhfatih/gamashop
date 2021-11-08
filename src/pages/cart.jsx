@@ -72,6 +72,45 @@ const Cart = () => {
     setCartItems(newCart);
   };
 
+  const increment = (idx) => {
+    console.log("increament", idx);
+
+    let temp = cartItems;
+    let newCart = [];
+
+    temp.forEach((item, i) => {
+      if (i === idx) {
+        let now = item.amount + 1;
+        newCart[i] = { ...item, amount: now };
+        console.log(newCart[i].amount);
+      } else {
+        newCart[i] = item;
+      }
+    });
+
+    setCartItems(newCart);
+  };
+
+  const decrement = (idx) => {
+    console.log("decrement", idx);
+
+    let temp = cartItems;
+    let newCart = [];
+
+    temp.forEach((item, i) => {
+      if (i === idx) {
+        let now = item.amount - 1;
+        if (now < 0) now = 0;
+        newCart[i] = { ...item, amount: now };
+        console.log(newCart[i].amount);
+      } else {
+        newCart[i] = item;
+      }
+    });
+
+    setCartItems(newCart);
+  };
+
   return (
     <MainLayout className="flex mx-20 mt-5">
       {/* barang */}
@@ -88,6 +127,8 @@ const Cart = () => {
             isChecked={element.isChecked}
             productDetail={element}
             toggleCheck={checkItem}
+            increment={increment}
+            decrement={decrement}
           />
         ))}
       </div>
