@@ -10,6 +10,7 @@ import Dashboard from './pages/dashboard';
 import Profile from './pages/profile';
 import ProductDetail from "./pages/product_detail";
 import Cart from "./pages/cart"
+import Checkout from "./pages/checkout";
 
 const App = () => {
 	return (
@@ -23,12 +24,13 @@ const App = () => {
 					<Route exact path="/signup" component={SignUp} />
 					<Route exact path="/dashboard" component={Dashboard} />
 					<Route exact path="/profile" component={Profile} />
-					<Route exact path="/product/:id" component={ProductDetail}/>
-					<Route exact path="/cart" component ={Cart}/>
+					<Route exact path="/product/:id" component={ProductDetail} />
+					<Route exact path="/cart" component={Cart} />
+					<Route exact path="/checkout" component={Checkout} />
 				</Switch>
 			</Router>
 		</ContextProvider>
 	);
-  }
+}
 
 export default App;
