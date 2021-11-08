@@ -28,7 +28,7 @@ const Cart = () => {
   return (
     <MainLayout className="flex mx-20 mt-5">
       {/* barang */}
-      <div className="p-6 bg-gray-200 w-full">
+      <div className="w-full p-6 bg-gray-100">
         <h1 className="text-xl font-bold">Cart</h1>
         {cartItems.map((element, i) => (
           <CartItem
@@ -38,6 +38,7 @@ const Cart = () => {
             name={element.name}
             price={element.price}
             productDetail={element}
+            // onClick={() => console.log("Gua di klik, si key nomor", i)}
           />
         ))}
       </div>
