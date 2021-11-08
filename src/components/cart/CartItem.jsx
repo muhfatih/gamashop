@@ -3,7 +3,16 @@ import { FaRegTrashAlt, FaMinus, FaPlus, FaCheck } from "react-icons/fa";
 
 import Waifu from "../../images/waifu.jpg";
 
-const CartItem = ({ image, itemCount, name, price, productDetail }) => {
+const CartItem = ({
+  index,
+  image,
+  itemCount,
+  name,
+  price,
+  isChecked,
+  productDetail,
+  toggleCheck,
+}) => {
   const [count, setCount] = useState(itemCount);
   const increment = () => {
     setCount((count) => count + 1);
@@ -38,8 +47,18 @@ const CartItem = ({ image, itemCount, name, price, productDetail }) => {
       <div className="flex">
         {/* button centang */}
         <div className="flex">
-          <button className="p-2 my-auto bg-transparent border-2 border-gray-400 rounded-xl">
-            <FaCheck size={14} className="text-xl text-gray-400 " />
+          <button
+            className="p-2 my-auto bg-transparent border-2 border-gray-400 rounded-xl"
+            onClick={() => {
+              toggleCheck(index);
+            }}
+          >
+            <FaCheck
+              size={14}
+              className={
+                "text-xl " + (isChecked ? " text-gray-400" : " text-white")
+              }
+            />
           </button>
         </div>
         <img
