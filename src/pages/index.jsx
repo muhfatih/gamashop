@@ -1,6 +1,5 @@
 import React from "react";
-import TrendingProducts from "../components/home/TrendingProducts";
-import NewArrivalProducts from "../components/home/NewArrivalProducts";
+import TrendingAndNewProducts from "../components/home/TrendingAndNewProducts";
 import ExploreCategories from "../components/home/ExploreCategories";
 import MainLayout from "./../components/_layouts/MainLayout";
 
@@ -24,7 +23,6 @@ const index = () => {
             <div className="h-24 mt-6 bg-red-500 rounded-xl" />
           </div>
         </div>
-
         {/* Benefit */}
         <div
           className="flex justify-between w-full mt-12 gap-x-40"
@@ -34,13 +32,26 @@ const index = () => {
           <img src={FullSupport} alt="FullSupport" className="w-full" />
           <img src={SafeTransaction} alt="SafeTransaction" className="w-full" />
         </div>
-
-        <TrendingProducts />
-        {/* <NewArrivalProducts /> */}
-        {/* <ExploreCategories /> */}
+        {list1.map((item) => (
+          <TrendingAndNewProducts name={item.name} url={item.url} />
+        ))}
+        <ExploreCategories />
       </div>
     </MainLayout>
   );
 };
 
 export default index;
+
+const list1 = [
+  {
+    name: "TRENDING",
+    url: "https://gamaxios.herokuapp.com/product/list-trending/4",
+    href: "",
+  },
+  {
+    name: "NEW ARRIVAL",
+    url: "https://gamaxios.herokuapp.com/product/list-new-arrival/4",
+    href: "",
+  },
+];
