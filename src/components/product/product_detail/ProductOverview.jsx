@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { currencyFormatter } from "src/core/utils/formatter";
 
 const ProductOverview = (props) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const increment = () => {
     setCount((count) => count + 1);
@@ -18,7 +19,7 @@ const ProductOverview = (props) => {
       }
     });
   };
-  const currencyFormatter = Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' });
+
 
   const addToCart = () => {
     const previousArray = JSON.parse(window.localStorage.getItem("cart")) || [];
@@ -34,22 +35,22 @@ const ProductOverview = (props) => {
         <h2 className="py-4 mt-6 mb-16 text-4xl font-semibold pl-7" style={{
           background: "linear-gradient(90.6deg, #04ED49 0%, #00C5F2 100%)",
           "-webkit-background-clip": "text", "-webkit-text-fill-color": "transparent"
-        }}>{currencyFormatter.format(props.price)}</h2>
+        }}>{currencyFormatter.format(props.price).split('.')[0]}</h2>
       </div>
 
       <div className="flex">
         <button onClick={decrement}
-          className="p-4 bg-transparent border-2 border-gray-400 rounded-xl">
+          className="p-2 bg-transparent border-2 border-gray-400 rounded-xl">
           <FaMinus size={42} className="text-xl text-gray-400" />
         </button>
-        <h2 className="mt-5 text-xl text-4xl font-semibold text-black mx-7">{count}</h2>
+        <h2 className="mt-3 text-4xl font-semibold text-black mx-7">{count}</h2>
         <button onClick={increment}
-          className="p-4 mr-8 bg-transparent border-2 border-gray-400 rounded-xl" >
+          className="p-2 mr-8 bg-transparent border-2 border-gray-400 rounded-xl" >
           <FaPlus size={42} className="text-xl text-gray-400 " />
         </button>
         <button
           onClick={addToCart}
-          className="py-4 text-2xl font-bold text-white rounded-xl px-14"
+          className="py-2 text-xl font-bold text-white rounded-xl px-14"
           style={{
             background:
               "linear-gradient(90.6deg, #04ED49 0%, #00C5F2 100%)",

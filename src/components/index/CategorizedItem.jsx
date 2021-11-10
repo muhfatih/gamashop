@@ -6,7 +6,7 @@ import axios from "axios";
 import topUpperCase from "../home/toUpperCase";
 import CardItems from "./CardItems";
 
-function CateygoriedItem({ name, url, href, imageUrl }) {
+function CategorizedItem({ name, url, href, imageUrl }) {
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function CateygoriedItem({ name, url, href, imageUrl }) {
     })();
   }, []);
 
-  useEffect(() => {}, [productList]);
+  useEffect(() => { }, [productList]);
 
   return (
     <div className="mb-6">
@@ -63,4 +63,4 @@ function CateygoriedItem({ name, url, href, imageUrl }) {
   );
 }
 
-export default CateygoriedItem;
+export default CategorizedItem;

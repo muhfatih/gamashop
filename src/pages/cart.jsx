@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MainLayout from "src/components/_layouts/MainLayout";
 import CartItem from "src/components/cart/CartItem";
 import { useEffect } from "react/cjs/react.development";
+import { currencyFormatter } from "src/core/utils/formatter";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -39,11 +40,6 @@ const Cart = () => {
 
     setCartItems(items2);
   }, []);
-
-  const currencyFormatter = Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-  });
 
   const checkItem = (idx) => {
     console.log("clicked si -", idx);

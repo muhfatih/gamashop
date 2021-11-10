@@ -3,6 +3,13 @@ import CheckoutItem from 'src/components/checkout/CheckoutItem';
 import MainLayout from 'src/components/_layouts/MainLayout';
 
 const Checkout = () => {
+
+    const [ItemCart, setItemCart] = useState([]);
+
+    const getItemFromLocalStorage = () => {
+        return JSON.parse(window.localStorage.getItem(''));
+    }
+
     return (
         <MainLayout>
             {/* Title */}
@@ -11,8 +18,11 @@ const Checkout = () => {
             </div>
             {/* Items */}
             <div className="px-4 py-4 mt-6">
-                <CheckoutItem />
-
+                <CheckoutItem
+                    image={ }
+                    productName={ }
+                    price={ }
+                    amount={ } />
             </div>
             <div className="flex justify-between ">
                 {/* Address */}

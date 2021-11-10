@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BsArrowRight } from "react-icons/bs";
-import CateygoriedItem from "../index/CateygoriedItem";
+import CategorizedItem from "../index/CategorizedItem";
+
 
 const ExploreCategories = () => {
   return (
@@ -16,7 +17,7 @@ const ExploreCategories = () => {
 
       <div>
         {list.map((item) => (
-          <CateygoriedItem
+          <CategorizedItem
             name={item.name}
             url={item.url}
             href={item.href}

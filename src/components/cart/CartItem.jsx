@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaRegTrashAlt, FaMinus, FaPlus, FaCheck } from "react-icons/fa";
+import { currencyFormatter } from "src/core/utils/formatter";
 
 import Waifu from "../../images/waifu.jpg";
 
@@ -20,11 +21,6 @@ const CartItem = ({
   const deleteItem = () => {
     const items = window.localStorage;
   };
-
-  const currencyFormatter = Intl.NumberFormat("id-ID", {
-    style: "currency",
-    currency: "IDR",
-  });
 
   return (
     <div
@@ -57,7 +53,7 @@ const CartItem = ({
         />
         <div className="flex-col ml-4">
           <h4 className="text-lg font-semibold">{name}</h4>
-          <h5>{currencyFormatter.format(price)}</h5>
+          <h5>{currencyFormatter.format(price).split('.')[0]}</h5>
         </div>
       </div>
 

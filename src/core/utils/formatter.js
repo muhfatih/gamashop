@@ -1,0 +1,1 @@
+export const currencyFormatter = Intl.NumberFormat('en-ID', { style: 'currency', currency: 'IDR' });
