@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { FaRegTrashAlt, FaMinus, FaPlus, FaCheck } from "react-icons/fa";
 import { currencyFormatter } from "src/core/utils/formatter";
 
-import Waifu from "../../images/waifu.jpg";
-
 const CartItem = ({
   index,
   image,
@@ -47,7 +45,7 @@ const CartItem = ({
         </div>
         <img
           className="ml-4"
-          src={Waifu}
+          src={image}
           alt="product image"
           style={{ width: 100, height: 100 }}
         />

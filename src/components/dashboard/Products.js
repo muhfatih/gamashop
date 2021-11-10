@@ -16,8 +16,8 @@ function Products() {
     }, []);
 
     return (
-        <div className="w-full flex-sc col gap-8">
-            <div className="w-full flex-bc mb-6">
+        <div className="w-full gap-8 flex-sc col">
+            <div className="w-full mb-6 flex-bc">
                 <p className="text-3xl font-bold">Manage Product</p>
                 <button style={{
                     background:
@@ -29,17 +29,18 @@ function Products() {
                 {productList.map((item, index) => (
                     <div
                         key={index}
-                        className="rounded-lg flex col"
+                        className="flex rounded-lg col"
                         style={{
                             height: "360px",
                             boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
                         }}
                     >
-                        <img src={item.images[0]} alt="barang" className="mx-auto w-52" />
 
+
+                        <div style={{ height: 200, width: 200 }}><img src={item.images[0]} alt="barang" className="object-cover mx-auto full " /></div>
                         <div className="mx-2 mb-3 bg-gray-300" style={{ height: 1 }} />
 
-                        <div id={`item` + index} className="px-3 py-4 flex col justify-between h-full">
+                        <div id={`item` + index} className="flex justify-between h-full px-3 py-4 col">
                             <p className="text-sm font-medium">{item.name}</p>
                             {/* <p className="mt-1 text-base" style={{ color: "#04E56E" }}>
                                 {item.price}
