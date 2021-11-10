@@ -1,14 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CheckoutItem from 'src/components/checkout/CheckoutItem';
 import MainLayout from 'src/components/_layouts/MainLayout';
 
 const Checkout = () => {
 
-    const [ItemCart, setItemCart] = useState([]);
+    const [Items, setItems] = useState([]);
 
     const getItemFromLocalStorage = () => {
-        return JSON.parse(window.localStorage.getItem(''));
+        return JSON.parse(window.localStorage.getItem('checkout'));
     }
+
+    useEffect(() => {
+        const items = getItemFromLocalStorage()
+        setItems(items);
+    }, []);
+
+    // useEffect(() => {
+    //     (async () => {
+
+    //         const data = await axios
+    //             .get(`https://gamaxios.herokuapp.com/product/${id}`)
+    //             .then(function (response) {
+    //                 setProductDetail(response.data);
+    //             })
+    //             .catch(function (error) {
+    //                 console.log(error);
+    //             })
+    //             .then(function () {
+    //                 console.log("im here");
+    //             });
+    //     })();
+    // }, []);
 
     return (
         <MainLayout>
@@ -18,11 +40,15 @@ const Checkout = () => {
             </div>
             {/* Items */}
             <div className="px-4 py-4 mt-6">
-                <CheckoutItem
-                    image={ }
-                    productName={ }
-                    price={ }
-                    amount={ } />
+                {Items.map((item, i) => (
+                    <CheckoutItem
+                        key={i}
+                        image={item.images[0]}
+                        productName={item.name}
+                        price={item.price}
+                        amount={item.amount} />
+                ))}
+
             </div>
             <div className="flex justify-between ">
                 {/* Address */}
