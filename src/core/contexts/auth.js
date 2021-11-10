@@ -42,6 +42,7 @@ const AuthStore = () => {
   return {
     status,
     authMethods,
+    userData,
   };
 };
 

@@ -70,13 +70,14 @@ const AuthButtons = () => (
 );
 
 const AuthArea = () => {
+  const { userData } = useAuth();
   return (
     <Link to="/dashboard" className="flex-cc">
       <div className="w-10 h-10 overflow-hidden rounded-full flex-cc">
         {/* if ada image show image user */}
         <FaUserCircle className="text-gray-400 full" />
       </div>
-      <p className="ml-3 font-semibold">Hi, Rizky</p>
+      <p className="ml-3 font-semibold">Hi, {userData.name}</p>
     </Link>
   );
 };
