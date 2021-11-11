@@ -4,6 +4,7 @@ import gamaxios from "src/api.documentation";
 const AuthStore = () => {
   const [userData, setUserData] = useState({});
   const [status, setStatus] = useState("initial"); // initial | user | guest
+  const [tagihan, setTagihan] = useState(0);
 
   const authMethods = {
     authenticate: () => {},
@@ -43,6 +44,8 @@ const AuthStore = () => {
     status,
     authMethods,
     userData,
+    tagihan,
+    setTagihan,
   };
 };
 

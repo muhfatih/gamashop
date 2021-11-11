@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import MainLayout from "src/components/_layouts/MainLayout";
+import { useAuth } from "src/core/contexts";
 import { currencyFormatter } from "src/core/utils/formatter";
 
 const Payment = () => {
-  const tagihan = 500000;
+  const { tagihan } = useAuth();
   const [saldo, setSaldo] = useState(2000000000);
   const [success, setSuccess] = useState(false);
 
