@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GET_LIST_TRENDING_PRODUCT } from "../../api.documentation";
 import { BsArrowRight } from "react-icons/bs";
-import Love from "./../../images/LoveIcon.svg";
-import Star from "./../../images/StarIcon.svg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import CardItems from "../index/CardItems";

@@ -24,7 +24,8 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    const items = getCartFromLocalStorage();
+    let items = getCartFromLocalStorage();
+    if (items === null) items = [];
     let items2 = [];
 
     // menambahkan tag isCheked
