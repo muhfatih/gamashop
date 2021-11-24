@@ -12,6 +12,7 @@ import ProductDetail from "./pages/product_detail";
 import Cart from "./pages/cart";
 import Checkout from "./pages/checkout";
 import Payment from "./pages/payment";
+import addItem from "./pages/seller/addItem";
 
 const App = () => {
   return (
@@ -29,6 +30,8 @@ const App = () => {
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/payment" component={Payment} />
+
+          <Route exact path="/addItem" component={addItem} />
         </Switch>
       </Router>
     </ContextProvider>
