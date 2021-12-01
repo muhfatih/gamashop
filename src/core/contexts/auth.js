@@ -8,13 +8,26 @@ const AuthStore = () => {
 
   const authMethods = {
     authenticate: () => {},
-    login: (username, password) => {
-      //success
-      setStatus("user");
-      // fail
-      setStatus("guest");
+    login: ({ email, password }) => {
+      console.log("jabnjh");
+      return gamaxios
+        .post("/login-customer", {
+          email,
+          password,
+        })
+        .then((res) => {
+          setStatus("user");
+          setUserData(res.data.body.user_data);
+          console.log("res", res);
+        })
+        .catch((err) => {
+          console.log("err", err);
+
+          console.log(err.response.data.message);
+        });
     },
     signup: ({ name, email, password }) => {
+      console.log(name, email, password);
       return gamaxios
         .post("/register-customer", {
           name,
@@ -24,8 +37,13 @@ const AuthStore = () => {
         .then((res) => {
           setStatus("user");
           setUserData(res.data.body.user_data);
+          console.log("res", res);
         })
-        .catch((err) => console.log(err.response.data.message));
+        .catch((err) => {
+          console.log("err", err);
+
+          console.log(err.response.data.message);
+        });
     },
     logout: () => {
       setStatus("guest");

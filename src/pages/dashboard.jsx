@@ -10,7 +10,7 @@ import { useAuth } from "src/core/contexts";
 const Dashboard = () => {
   const tabs = ["Profile", "Orders", "Wishlist", "Setting"];
   const [selectedTab, setSelectedTab] = useTabs(tabs);
-  const { userData } = useAuth();
+  const { userData, authMethods } = useAuth();
   console.log(userData);
 
   return (
@@ -24,12 +24,12 @@ const Dashboard = () => {
           }}
         >
           <div className="container grid grid-cols-2 h-full">
-            <p className="m-auto font-bold text-3xl whitespace-nowrap">
+            <p className="m-auto text-3xl font-bold whitespace-nowrap">
               DASHBOARD
             </p>
-            <div className="w-full flex gap-8">
+            <div className="flex gap-8 w-full">
               {tabs.map((item, i) => (
-                <div className="flex-cc h-full w-16">
+                <div key={i} className="flex-cc w-16 h-full">
                   <button
                     onClick={() => setSelectedTab(item)}
                     className={`hoverMenu ${
@@ -47,15 +47,18 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="px-64 py-16 flex-cs gap-12 h-full">
-          <div className="flex-cc col w-1/3 bg-gray-200 p-12 rounded-lg">
+        <div className="flex-cs gap-12 px-64 py-16 h-full">
+          <div className="flex-cc col p-12 w-1/3 bg-gray-200 rounded-lg">
             <div className="w-full rounded-full">
-              <FaUserCircle className="full text-gray-400" />
+              <FaUserCircle className="text-gray-400 full" />
             </div>
-            <p className="text-3xl font-semibold mt-4">{userData.name}</p>
+            <p className="mt-4 text-3xl font-semibold">{userData.name}</p>
             <p className="">{userData.email}</p>
 
-            <button className="flex-cc bg-primary-red w-full h-10 mt-16 text-white text-xl font-bold rounded-md">
+            <button
+              onClick={() => authMethods.logout()}
+              className="flex-cc mt-16 w-full h-10 text-xl font-bold text-white rounded-md bg-primary-red"
+            >
               Logout
             </button>
           </div>
